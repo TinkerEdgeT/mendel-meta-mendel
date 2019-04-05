@@ -1,21 +1,24 @@
 Source: meta-mendel
 Maintainer: Coral <coral-support@google.com>
-Build-Depends: debhelper
+Build-Depends: debhelper (>=10)
 Section: metapackages
 Priority: optional
+Standards-Version: 3.9.8
 
 Package: mendel-core
 Priority: optional
-Depends: base-files,
-         mdt-services,
+Depends: mdt-services,
          mendel-distro-info-data,
          mendel-keyring,
          mendel-minimal,
          runonce,
          usb-gadget,
-         vitalsd
+         vitalsd,
+         ${misc:Depends}
 Architecture: any
 Description: Metapackage for core Mendel packages
+ Metapackage for the core packages required by Mendel,
+ on any supported device.
 
 Package: mendel-gui
 Priority: optional
@@ -30,6 +33,9 @@ Depends: gstreamer1.0-alsa,
          libgstreamer1.0-0,
          libgstreamer-plugins-bad1.0-0,
          libgstreamer-plugins-base1.0-0,
-         mendel-core
+         mendel-core,
+         ${misc:Depends}
 Architecture: any
 Description: Metapackage for GUI Mendel packages
+ Metapackage to provide gui functionality for Mendel,
+ on any supported device.
